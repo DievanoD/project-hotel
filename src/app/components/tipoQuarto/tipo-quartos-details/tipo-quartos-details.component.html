@@ -1,0 +1,19 @@
+<div *ngIf="tipoQuarto">
+    <h2>Detalhe do quarto {{tipoQuarto.descricao}}</h2>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+        <mat-card-title>Quarto {{tipoQuarto.descricao}}</mat-card-title>
+        <mat-card-subtitle>Informações</mat-card-subtitle>
+      </mat-card-header>
+      <!-- <img mat-card-image src="#" alt="Photo of a Shiba Inu"> -->
+      <mat-card-content>
+        <!-- <p>Código do quarto: {{quarto.cod_quarto}}</p> -->
+        <p>Valor do Quarto: {{tipoQuarto.valor}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a href="/tipoquartos" mat-button>VOLTAR</a>
+        <button mat-button [routerLink]="['/tipoquartos-edit/', tipoQuarto.codigo]">EDITAR</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>

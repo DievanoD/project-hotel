@@ -1,0 +1,22 @@
+<div *ngIf="quarto">
+  <h2>Detalhe do quarto {{quarto.numero}}</h2>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <!-- <div mat-card-avatar class="example-header-image"></div> -->
+      <mat-card-title>Quarto {{quarto.numero}}</mat-card-title>
+      <mat-card-subtitle>Informações</mat-card-subtitle>
+    </mat-card-header>
+    <!-- <img mat-card-image src="#" alt="Photo of a Shiba Inu"> -->
+    <mat-card-content>
+      <!-- <p>Código do quarto: {{quarto.cod_quarto}}</p> -->
+      <p>Número: {{quarto.numero}}</p>
+      <p>Andar: {{quarto.andar}}</p>
+      <p>Status: {{quarto.status}}</p>
+      <!-- <p>Tipo de Quarto: {{quarto.cod_tipo_quarto}}</p> -->
+    </mat-card-content>
+    <mat-card-actions>
+      <a href="/quartos" mat-button>VOLTAR</a>
+      <button mat-button [routerLink]="['/quartos-edit/', quarto.codQuarto]">EDITAR</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

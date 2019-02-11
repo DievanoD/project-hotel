@@ -1,0 +1,12 @@
+<h1>{{titulo}}</h1>
+<mat-list role="list">
+  <h3 mat-subheader>Cliente</h3>
+  <mat-list-item role="listitem" *ngFor="let cliente of clientes">
+    <h4 mat-line>
+      <a [routerLink]="['/clientes-details/', cliente.codigo]">Cliente: {{cliente.nome}}</a>
+    </h4>
+    <button mat-raised-button (click)="deletaCliente(cliente.codigo)">Deletar</button>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+
+</mat-list>

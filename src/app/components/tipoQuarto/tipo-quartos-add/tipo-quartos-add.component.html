@@ -1,0 +1,29 @@
+<div>
+
+  <h2>
+    Adicionar Tipo de Quarto
+  </h2>
+
+  <form [formGroup]="tipoQuartoForm" (ngSubmit)="onFormSubmit(tipoQuartoForm.value)">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="descricao" formControlName="descricao" [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!tipoQuartoForm.get('descricao').valid && tipoQuartoForm.get('descricao').touched">Preencha a
+          descricao</span>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Valor do quarto" formControlName="valor" [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!tipoQuartoForm.get('valor').valid && tipoQuartoForm.get('valor').touched">Preencha o valor
+          do quarto</span>
+      </mat-error>
+    </mat-form-field>
+
+    <div class="button-row">
+      <button type="submit" mat-raised-button color="primary">Salvar</button>
+    </div>
+  </form>
+
+</div>

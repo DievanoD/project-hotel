@@ -1,0 +1,31 @@
+{
+  "quartos": [
+    {
+      "cod_quarto": "1",
+      "numero": "123",
+      "andar": "5",
+      "status": "true",
+      "cod_tipo_servico": "",
+      "cod_tipo_quarto": "2",
+      "id": 1
+    },
+    {
+      "cod_quarto": "2",
+      "numero": "765",
+      "andar": "8",
+      "status": "true",
+      "cod_tipo_servico": "",
+      "cod_tipo_quarto": "1",
+      "id": 2
+    },
+    {
+      "cod_quarto": "3",
+      "numero": "342",
+      "andar": "6",
+      "status": "ocupado",
+      "cod_tipo_servico": "",
+      "cod_tipo_quarto": "simples",
+      "id": 3
+    }
+  ]
+}

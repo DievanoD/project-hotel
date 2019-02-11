@@ -1,0 +1,43 @@
+<div>
+  <h2>
+    Adicionar Cliente
+  </h2>
+
+<form [formGroup]="clienteForm" (ngSubmit)="onFormSubmit(clienteForm.value)">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nome" formControlName="nome" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!clienteForm.get('nome').valid && clienteForm.get('nome').touched">Nome do cliente</span>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+      <input matInput placeholder="Cpf" formControlName="cpf" [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!clienteForm.get('cpf').valid && clienteForm.get('cpf').touched">cpf do Cliente</span>
+      </mat-error>
+    </mat-form-field>
+
+  <mat-form-field>
+      <mat-label>Selecione o Sexo</mat-label>
+    <select matNativeControl required formControlName="sexo">
+      <option value="F">Feminino</option>
+      <option value="M">Masculino</option>
+    </select>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Email" formControlName="email" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!clienteForm.get('email').valid && clienteForm.get('email').touched">Email do cliente</span>
+    </mat-error>
+  </mat-form-field>
+
+ 
+  <div class="button-row">
+    <button type="submit" mat-raised-button color="primary">Salvar</button>
+  </div>
+ </form>
+</div>
+
+

@@ -1,0 +1,49 @@
+<div>
+  <h2>
+    Adicionar Quartos
+  </h2>
+
+  <form [formGroup]="quartosForm" (ngSubmit)="onFormSubmit(quartosForm.value)">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Numero do quarto" formControlName="numero" [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!quartosForm.get('numero').valid && quartosForm.get('numero').touched">Preencha o número</span>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Andar" formControlName="andar" [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!quartosForm.get('andar').valid && quartosForm.get('andar').touched">Preencha o andar</span>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Tipo de quarto" formControlName="tipoQuarto">
+        <mat-option *ngFor="let tipoQuarto of tipoQuartos" [value]="tipoQuarto.codigo" >
+          {{tipoQuarto.descricao}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <select matNativeControl required formControlName="status">
+        <option value="desocupado">Desocupado</option>
+        <option value="ocupado">Ocupado</option>
+      </select>
+    </mat-form-field>
+
+    <!-- <mat-form-field>
+      <select matNativeControl required formControlName="tipoQuarto">
+        <option value="1">Casal</option>
+        <option value="2">Solteiro</option>
+      </select>
+    </mat-form-field> -->
+
+    <div class="button-row">
+      <!-- <button type="submit" [disabled]="!quartosForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button> -->
+      <button type="submit" mat-raised-button color="primary">Salvar</button>
+    </div>
+  </form>
+
+</div>

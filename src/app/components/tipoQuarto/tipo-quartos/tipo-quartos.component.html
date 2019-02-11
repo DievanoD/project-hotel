@@ -1,0 +1,11 @@
+<mat-list role="list">
+  <h3 mat-subheader>Tipo Quartos</h3>
+  <mat-list-item role="listitem" *ngFor="let tipoQ of tipoQuarto">
+    <h4 mat-line>
+      <a [routerLink]="['/tipoquartos-details/', tipoQ.codigo]">Tipo: {{tipoQ.descricao}}</a>
+    </h4>
+    <button mat-raised-button (click)="deletaTipoQuarto(tipoQ.codigo)">Deletar</button>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+
+</mat-list>

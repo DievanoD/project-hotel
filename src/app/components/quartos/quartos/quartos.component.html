@@ -1,0 +1,13 @@
+<h1>{{titulo}}</h1>
+
+<mat-list role="list">
+  <h3 mat-subheader>Quartos</h3>
+  <mat-list-item role="listitem" *ngFor="let quarto of quartos">
+    <h4 mat-line>
+      <a [routerLink]="['/quartos-details/', quarto.codQuarto]">Quarto Número: {{quarto.numero}}</a>
+    </h4>
+    <button mat-raised-button (click)="deletaQuarto(quarto.codQuarto)">Deletar</button>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+
+</mat-list>

@@ -1,0 +1,42 @@
+<div>
+  <h2>
+    Alterar Quartos
+  </h2>
+  
+<form [formGroup]="quartosEditForm" (ngSubmit)="onFormSubmit(quartosEditForm.value)">
+  <mat-form-field class="example-full-width">
+    <!-- <input name="id" type="hidden" formControlName="codQuarto" /> -->
+    <input matInput placeholder="Numero do quarto" formControlName="numero" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!quartosEditForm.get('numero').valid && quartosEditForm.get('numero').touched">Preencha o número</span>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Andar" formControlName="andar" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!quartosEditForm.get('andar').valid && quartosEditForm.get('andar').touched">Preencha o andar</span>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Status" formControlName="status" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!quartosEditForm.get('status').valid && quartosEditForm.get('status').touched">Preencha o status</span>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- <mat-form-field class="example-full-width">
+    <input matInput placeholder="Tipo quarto" formControlName="tipoQuarto" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!quartosEditForm.get('tipoQuarto').valid && quartosEditForm.get('tipoQuarto').touched">Preencha o tipo</span>
+    </mat-error>
+  </mat-form-field> -->
+
+  <div class="button-row">
+    <!-- <button type="submit" [disabled]="!quartosEditForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button> -->
+    <button type="submit" mat-raised-button color="primary">Salvar</button>
+  </div>
+</form>
+
+</div>

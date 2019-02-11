@@ -1,0 +1,27 @@
+<div>
+    <h2>
+      Alterar Quartos
+    </h2>
+  
+  <form [formGroup]="tipoQuartoEditForm" (ngSubmit)="onFormSubmit(tipoQuartoEditForm.value)">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="descricao" formControlName="descricao" [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!tipoQuartoEditForm.get('descricao').valid && tipoQuartoEditForm.get('descricao').touched">Preencha a descricao</span>
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Valor" formControlName="valor" [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!tipoQuartoEditForm.get('valor').valid && tipoQuartoEditForm.get('valor').touched">Preencha o valor</span>
+      </mat-error>
+    </mat-form-field>
+      
+    <div class="button-row">
+      <!-- <button type="submit" [disabled]="!quartosEditForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button> -->
+      <button type="submit" mat-raised-button color="primary">Salvar</button>
+    </div>
+  </form>
+  
+  </div>
