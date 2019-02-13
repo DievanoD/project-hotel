@@ -18,7 +18,7 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field class="example-full-width">
       <mat-select placeholder="Tipo de quarto" formControlName="tipoQuarto">
         <mat-option *ngFor="let tipoQuarto of tipoQuartos" [value]="tipoQuarto.codigo" >
           {{tipoQuarto.descricao}}
@@ -26,11 +26,12 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field>
-      <select matNativeControl required formControlName="status">
-        <option value="desocupado">Desocupado</option>
-        <option value="ocupado">Ocupado</option>
-      </select>
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Selecione o status" required formControlName="status">
+        <mat-option value="DESOCUPADO">Desocupado</mat-option>
+        <mat-option value="OCUPADO">Ocupado</mat-option>
+        <mat-option value="REFORMANDO">Reformando</mat-option>
+      </mat-select>
     </mat-form-field>
 
     <!-- <mat-form-field>

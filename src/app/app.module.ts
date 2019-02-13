@@ -18,14 +18,17 @@ import {
   MatProgressSpinnerModule,
   MatSortModule,
   MatTableModule,
-  MatIconModule,
   MatButtonModule,
   MatCardModule,
   MatFormFieldModule, 
   MatToolbarModule,
   MatMenuModule, MatSidenavModule, MatListModule } from "@angular/material";
 
+import {MatRadioModule} from '@angular/material/radio';
+
 import {MatSelectModule} from '@angular/material/select';
+
+import {MatIconModule} from '@angular/material/icon';
 
 import { QuartosComponent } from './components/quartos/quartos/quartos.component';
 import { QuartosAddComponent } from './components/quartos/quartos-add/quartos-add.component';
@@ -41,6 +44,8 @@ import { ClienteComponent } from './components/cliente/cliente/cliente.component
 import { ClienteAddComponent } from './components/cliente/cliente-add/cliente-add.component';
 import { ClienteDetailsComponent } from './components/cliente/cliente-details/cliente-details.component';
 import { ClienteEditComponent } from './components/cliente/cliente-edit/cliente-edit.component';
+import { NavComponent } from './nav/nav.component';
+
 
 @NgModule({
   declarations: [
@@ -57,7 +62,8 @@ import { ClienteEditComponent } from './components/cliente/cliente-edit/cliente-
     TipoQuartosComponent,
     TipoQuartosDetailsComponent,
     TipoQuartosEditComponent,
-    TipoQuartosAddComponent
+    TipoQuartosAddComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +86,10 @@ import { ClienteEditComponent } from './components/cliente/cliente-edit/cliente-
     LayoutModule,
     MatSidenavModule,
     MatListModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

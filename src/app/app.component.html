@@ -1,12 +1,11 @@
-<h1>Administrativo Hotel Teste</h1>
+<!-- <h1>Administrativo Hotel Teste</h1> -->
 
-<ul class="nav">
+<!-- <ul class="nav">
   <li><a href="/">Home</a></li>
   <li class="drop">Clientes
     <ul>
       <li><a href="/clientes-add">Add novo Cliente</a></li>
       <li><a href="/clientes">Listar Cliente</a></li>
-      <!-- <li><a href="http://www.g.com">Editar</a></li> -->
     </ul>
   </li>
 
@@ -14,20 +13,16 @@
     <ul>
       <li><a href="/quartos-add">Add novo quarto</a></li>
       <li><a href="/quartos">Listar quartos</a></li>
-      <!-- <li><a href="http://www.g.com">Editar</a></li> -->
     </ul>
   </li>
   <li class="drop">Tipos de Quartos
     <ul>
       <li><a href="/tipoquartos-add">Add novo tipo de quarto</a></li>
       <li><a href="/tipoquartos">Listar TIpos de quartos</a></li>
-      <!-- <li><a href="http://www.g.com">Editar</a></li> -->
     </ul>
   </li>
   <li><a href="#">Contact</a></li>
 </ul>
-
-<!-- <a class="follow" href="https://twitter.com/mildrenben" target="_blank"><i class="fa fa-twitter"></i>Follow Me</a> -->
 
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
@@ -35,4 +30,72 @@
 
 <div class="container">
   <router-outlet></router-outlet>
-</div>
+</div> -->
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>PROJECT HOTEL</span>
+
+    <span>
+      <button type="button" mat-button (click)="drawer.toggle()">
+        <mat-icon>reorder</mat-icon>
+      </button>
+    </span>
+
+    <span class="example-spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- <mat-sidenav-container class="example-container">
+    <mat-sidenav class="side-nav" mode="side" opened >Sidenav content</mat-sidenav>
+    <mat-sidenav-content>Main content</mat-sidenav-content>
+  </mat-sidenav-container> -->
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>Dashboard</p>
+
+    <a href="/quartos">
+      <div class="item-side-bar">
+          <span>QUARTOS</span>
+      </div>
+    </a>
+
+    <a href="/clientes">
+      <div class="item-side-bar">
+        CLIENTE
+      </div>
+    </a>
+
+
+    <!-- <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button> -->
+    <!-- <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p> -->
+
+    <!-- <ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li class="drop">Clientes
+        <ul>
+          <li><a href="/clientes-add">Add novo Cliente</a></li>
+          <li><a href="/clientes">Listar Cliente</a></li>
+        </ul>
+      </li>
+    </ul> -->
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <!-- <div class="container"> -->
+    <router-outlet></router-outlet>
+    <!-- </div> -->
+  </div>
+
+</mat-drawer-container>
